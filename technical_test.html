@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Test</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" id="inputnum" placeholder="Input Angka" required>
+        <button type="submit">Generate segitiga</button>
+        <button type="submit" id="generate">Generate Bilangan Ganjil</button>
+        <button id="prime" type="submit">Generate Bilangan Prima</button>
+
+        <div id="printnumber"></div>
+    </form>
+    <div id="printnumber"></div>
+    <script>
+       let inputnum = document.getElementById('inputnum');
+       let generate = document.getElementById('generate');
+       let number = document.getElementById('number');
+
+       let start = 0;
+       let bilGanjil = Array();
+
+       inputnum.addEventListener('click', () => {
+        if(bilGanjil.length > 0){
+            bilGanjil = [];
+            while(printnumber.hasChildNodes()){
+                printnumber.removeChild(number.firstChild);
+            }
+        }
+        start = parseInt(inputnum.value,10);
+        let j = 0;
+        for(let i = 1;i<=r;i++){
+            if(i%2 != 0){
+                bilGanjil[j] = i;
+                j++;
+            }
+        }
+        bilGanjil.forEach((o) => {
+            let p = document.createElement('p');
+            p.innerText = o;
+            printnumber.appendChild(p);
+        })
+        inputnum.value = '';
+       });
+    </script>
+</body>
+</html>
